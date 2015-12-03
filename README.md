@@ -136,9 +136,9 @@ f.check_box 'is_done', {title: 'Tick this for done'}
 ```rhtml
 f.check_box_collection "answer", { values: _.map(answers, (answer) -> [answer.toLowerCase(), answer]), checked: checked_answers }, { class: "form-control" }
 # =><input class="form-control" type="checkbox" name="reply[answer]" checked value="car">
-  Car
+  <label for="car">Car</label>
   <input class="form-control" type="checkbox" name="reply[answer]" value="notebook">
-  Notebook
+  <label for="notebook">Notebook</label>
 ```
 
 ### radio_buttons(method, options, html_options={optional})
@@ -146,9 +146,9 @@ f.check_box_collection "answer", { values: _.map(answers, (answer) -> [answer.to
 ```rhtml
 f.radio_buttons "answer", { values: _.map(answers, (answer) -> [answer.toLowerCase(), answer]) }, { class: "form-control" }
 # =><input class="form-control" type="radio" name="reply[answer]" checked value="yes">
-  Yes
+  <label for="yes">Yes</label>
   <input class="form-control" type="radio" name="reply[answer]" value="no">
-  No
+  <label for="no">No</label>
 ```
 
 ### date_field
