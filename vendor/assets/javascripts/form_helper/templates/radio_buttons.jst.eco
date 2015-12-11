@@ -1,4 +1,6 @@
 <% for value in @values: %>
-  <input <%- @unfold_options %> type="radio" name="<%= @field_name %>" <%= "checked" if value[0] == @value %> value="<%= value[0] %>"></input>
-  <label for="<%= value[0] %>"><%= value[1] %></label>
+  <div class="radio">
+    <input <%- @unfold_options %> type="radio" name="<%= @field_name %>" <%= "checked" if value[0] == @value %> value="<%= value[0] %>"></input>
+    <label for="<%= value[0] %>"><%= value[1] %></label>
+  </div>
 <% end %>
