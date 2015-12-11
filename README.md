@@ -116,39 +116,47 @@ f.select_tag 'only_group_id', {values: _.map(@groups, (g) -> [g.get('_id'), g.ge
 
 ```rhtml
 f.check_box 'is_done'
-# =><label class="checkbox">
+# =><div class="checkbox">
   <input id="task_is_done" name="task[is_done]" type="hidden" value="false">
   <input id="task_is_done" name="task[is_done]" type="checkbox"
     value="true" #{'checked' if method of model is 1 or true}>
-</label>
+</div>
 
 f.check_box 'is_done', {title: 'Tick this for done'}
-# =><label class="checkbox">
+# =><div class="checkbox">
   <input id="task_is_done" name="task[is_done]" type="hidden" value="false">
   <input id="task_is_done" name="task[is_done]" type="checkbox"
     value="true" #{'checked' if method of model is 1 or true}>
-  Tick this for done
-</label>
+  <label for="task_is_done">Tick this for done</label>
+</div>
 ```
 
 ### check_box_collection(method, options, html_options={optional})
 
 ```rhtml
 f.check_box_collection "answer", { values: _.map(answers, (answer) -> [answer.toLowerCase(), answer]), checked: checked_answers }, { class: "form-control" }
-# =><input class="form-control" type="checkbox" name="reply[answer]" checked value="car">
-  <label for="car">Car</label>
-  <input class="form-control" type="checkbox" name="reply[answer]" value="notebook">
-  <label for="notebook">Notebook</label>
+# =><div class="checkbox">
+    <input class="form-control" type="checkbox" name="reply[answer]" checked value="car">
+    <label for="car">Car</label>
+  </div>
+  <div class="checkbox">
+    <input class="form-control" type="checkbox" name="reply[answer]" value="notebook">
+    <label for="notebook">Notebook</label>
+  </div>
 ```
 
 ### radio_buttons(method, options, html_options={optional})
 
 ```rhtml
 f.radio_buttons "answer", { values: _.map(answers, (answer) -> [answer.toLowerCase(), answer]) }, { class: "form-control" }
-# =><input class="form-control" type="radio" name="reply[answer]" checked value="yes">
-  <label for="yes">Yes</label>
-  <input class="form-control" type="radio" name="reply[answer]" value="no">
-  <label for="no">No</label>
+# =><div class="radio">
+    <input class="form-control" type="radio" name="reply[answer]" checked value="yes">
+    <label for="yes">Yes</label>
+  </div>
+  <div class="radio">
+    <input class="form-control" type="radio" name="reply[answer]" value="no">
+    <label for="no">No</label>
+  </div>
 ```
 
 ### date_field
