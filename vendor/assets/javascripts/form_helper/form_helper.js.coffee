@@ -66,6 +66,7 @@ class @FormHelper
       value          : options.selected
       unfold_options : @unfold_options html_options
       field_id       : name
+      placeholder    : options.placeholder
     JST['form_helper/templates/select'] attrs
 
   #
