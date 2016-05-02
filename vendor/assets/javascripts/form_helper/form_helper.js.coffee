@@ -24,7 +24,10 @@ class @FormHelper
   text_field: (attr, value, html_options={}) ->
     if _.isObject(value)
       [html_options, value] = [value, null]
-    JST['form_helper/templates/text_field'] @basics4attr(attr, value, html_options)
+    type = html_options.type; delete html_options.type
+    attrs = @basics4attr(attr, value, html_options)
+    attrs.type = type || "text"
+    JST['form_helper/templates/text_field'] attrs
 
   text_area: (attr, value, html_options={}) ->
     if _.isObject(value)
