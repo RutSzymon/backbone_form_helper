@@ -91,6 +91,10 @@ f.text_field 'name', 'John'
 f.text_field 'name', {placeholder: 'name of person', class: 'mandatory'}
 # => <input type="text" id="task_name" name="task[name]" placeholder="name of person" class="mandatory"/>
 # => <span class="help-inline">#{errors on name}</span>
+
+f.text_field 'password', type: 'password'
+# => <input type="password" id="user_password" name="user[password]" value="">
+# => <span class="help-inline">#{errors on password}</span>
 ```
 ### text_area(method, value=optional, html_options={optional})
 Same as text_field but with textarea tag.
