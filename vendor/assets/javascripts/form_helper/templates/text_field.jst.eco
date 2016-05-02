@@ -1,4 +1,4 @@
-<input type="text" id="<%= @field_id %>" <%- @unfold_options %>
+<input type="<%= @type %>" id="<%= @field_id %>" <%- @unfold_options %>
   name="<%= @field_name %>" value="<%= @value %>" />
 <span class="help-inline">
   <%= @errors if @errors %>
